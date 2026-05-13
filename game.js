@@ -613,7 +613,7 @@ function renderTeams() {
 
     var dep=document.createElement('div'); dep.className='tbg';
     dep.style.borderColor=t.border; dep.style.color=tc;
-    dep.textContent="Départ — La Ferme d'Octave";
+    dep.textContent="Départ — Notre Airbnb";
 
     info.appendChild(nm); info.appendChild(tag); info.appendChild(mem); info.appendChild(dep);
     row.appendChild(embWrap); row.appendChild(info);
@@ -968,15 +968,16 @@ function confirmDest(inputId, errId, nextKey, onSuccess) {
 function showReturnHome() {
   var t = S.team; th(t);
   var returnTexts = {
-    grec: "Comme Ulysse apercevant enfin les rivages d'Ithaque, votre odyssée touche à sa fin. Revenez à la Ferme d'Octave — un dernier défi vous y attend !",
-    nordique: "Le Bifröst s'illumine une dernière fois. Revenez au mead-hall de la Ferme d'Octave — un dernier défi vous y attend, guerriers !",
-    hindou: "Le dharma vous a guidés jusqu'ici. Revenez à la Ferme d'Octave — un dernier défi vous y attend !"
+    grec: "Comme Ulysse apercevant enfin les rivages d'Ithaque, votre odyssée touche à sa fin. Revenez à l'Airbnb — un dernier défi vous y attend !",
+    nordique: "Le Bifröst s'illumine une dernière fois. Revenez à l'Airbnb — un dernier défi vous y attend, guerriers !",
+    hindou: "Le dharma vous a guidés jusqu'ici. Revenez à l'Airbnb — un dernier défi vous y attend !",
+    egyptien: "Comme Rà achevant sa traversée du ciel, votre odyssée touche à sa fin. Revenez à l'Airbnb — un dernier défi vous y attend !"
   };
   setText('s6title', t.name);
   var erIconEl2=document.getElementById('erIcon');
   if(erIconEl2) erIconEl2.textContent='';
-  setText('erName', 'Retour à la Ferme'); setStyle('erName', 'color', t.color);
-  setText('erAddr', returnTexts[t.key] || 'Revenez à la Ferme d\'Octave — un dernier défi vous y attend !');
+  setText('erName', "Retour à l'Airbnb"); setStyle('erName', 'color', t.color);
+  setText('erAddr', returnTexts[t.key] || "Revenez à l'Airbnb — un dernier défi vous y attend !");
   mkSteps('st6');
   // Mark all steps as done
   var steps = document.getElementById('st6');
@@ -1249,7 +1250,7 @@ function renderMJTabs() {
     var cp=CPS[ck];
     var btn=document.createElement('button'); btn.className='mjtb'+(S.mjC===ck?' on':'');
     if(S.mjC===ck){btn.style.color='var(--gold)';btn.style.background='var(--gd)';btn.style.borderColor='var(--gb)';}
-    var label=cp.name.replace("L'Église Notre-Dame",'Église').replace('La Mairie','Mairie').replace('Le Domaine Albrecht','Albrecht').replace('Le Pressoir','Pressoir').replace('Chez Laffy','Laffy').replace('Votre point de départ','Départ');
+    var label=cp.name.replace("L'Église Notre-Dame",'Église').replace('La Mairie','Mairie').replace('Le Domaine Albrecht Lucien','Albrecht').replace('Le Pressoir','Pressoir').replace('Chez Laffy','Laffy').replace('Notre Airbnb','Airbnb');
     btn.textContent=label;
     btn.addEventListener('click',(function(key){return function(){S.mjC=key;renderMJTabs();renderMJContent();};})(ck));
     ct.appendChild(btn);
