@@ -66,7 +66,7 @@ const CPS = {
   eglise:   {name:"L'Église Notre-Dame",    icon:"./cp-eglise.webp",   addr:"Rue de l'Église, Orschwihr",         code:"DAME"},
   fontaine: {name:"Le Pressoir",            icon:"./cp-fontaine.webp", addr:"26 Rue de Soultzmatt, Orschwihr",    code:"ONDE"},
   mairie:   {name:"La Mairie",              icon:"./cp-mairie.webp",   addr:"11 rue de Soultzmatt, Orschwihr",    code:"LOIS"},
-  cave:     {name:"Le Domaine Albrecht Lucien", icon:"./cp-cave.webp",   addr:"20 Rue du Printemps, Orschwihr",     code:"VINS"},
+  cave:     {name:"Le Domaine Albrecht Lucien", icon:"./cp-cave.webp",   addr:"28 Rue du Printemps, Orschwihr",     code:"VINS"},
   secret:   {name:"Chez Laffy",             icon:"./cp-secret.webp",   addr:"Rue de Bergholtz-Zell, Orschwihr",   code:"CAFE"},
   ferme:    {name:"Notre Airbnb",            icon:"",                   addr:"29 Grand Rue, Orschwihr, Grand Est 68500, France",      code:"FINI"}
 };
@@ -100,7 +100,7 @@ const HINTS = {
       "Dionysos lui-même y viendrait en pèlerinage. Ce lieu garde le fruit de la vigne et le labeur des hommes.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village produit les grands crus d'Alsace — cherchez l'entrée de leur cave.",
-      "Le Domaine Albrecht Lucien — 20 Rue du Printemps, Orschwihr."
+      "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
     ],
     egyptien: [  // Base → Pressoir
       "Les anneaux d'Apep serrent pour détruire. Ici, les anneaux serrent pour créer.",
@@ -122,7 +122,7 @@ const HINTS = {
       "Comme Sigurd de retour de sa quête, votre saga approche de son terme. Un dernier secret vous attend.",
       "Dionysos lui-même y viendrait en pèlerinage. Ce lieu garde le fruit de la vigne.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
-      "Le Domaine Albrecht Lucien — 20 Rue du Printemps, Orschwihr."
+      "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
     ],
     hindou: [  // → Base (DERNIER CP)
       "Votre yatra touche à sa fin. Retournez au point de départ — là où votre odyssée alsacienne a commencé.",
@@ -144,7 +144,7 @@ const HINTS = {
       "Dionysos foulait les raisins sous ses pieds nus. Ici, des vignerons alsaciens ont pris le relais.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
-      "Le Domaine Albrecht Lucien — 20 Rue du Printemps, Orschwihr."
+      "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
     ],
     nordique: [  // → Secret (Chez Laffy)
       "Heorot n'était ni temple ni forteresse. L'endroit où les guerriers posaient leurs armes et s'asseyaient ensemble.",
@@ -218,7 +218,7 @@ const HINTS = {
       "Dionysos foulait les raisins sous ses pieds nus. Ici, des vignerons alsaciens ont pris le relais.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
-      "Le Domaine Albrecht Lucien — 20 Rue du Printemps, Orschwihr."
+      "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
     ]
   },
 
