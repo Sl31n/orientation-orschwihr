@@ -1030,7 +1030,8 @@ function showArrival() {
     + '<div class="badge-title" style="color:' + tc + '">' + badge.title + '</div>'
     + '<div class="badge-desc">' + badge.desc + '</div></div>';
   var rows=S.plog.map(function(p){
-    return '<div class="srow"><span class="sl" style="padding-left:12px;font-size:12px">↳ '+p.reason+'</span><span class="sv" style="color:#e74c3c;font-size:13px">+'+p.min+' min</span></div>';
+    var pd=p.min<1?('+'+Math.round(p.min*60)+' sec'):('+'+p.min+' min');
+    return '<div class="srow"><span class="sl" style="padding-left:12px;font-size:12px">↳ '+p.reason+'</span><span class="sv" style="color:#e74c3c;font-size:13px">'+pd+'</span></div>';
   }).join('');
   var bd=document.getElementById('scoreDiv');
   // Build visual timeline (feature 8)
@@ -1040,7 +1041,7 @@ function showArrival() {
     var prev=S.t0;
     // Départ
     tlHtml+='<div class="tl-item"><div class="tl-dot done" style="border-color:'+tc+';background:'+tc+'"></div>'
-      +'<div class="tl-name" style="color:'+tc+'">Départ — La Ferme</div>'
+      +'<div class="tl-name" style="color:'+tc+'">Départ — Notre Airbnb</div>'
       +'<div class="tl-time">00:00</div></div>';
     S.cpTimes.forEach(function(ct){
       var cp=CPS[ct.cp];
@@ -1480,16 +1481,17 @@ function drawMapOnCanvas() {
   var canvas = document.getElementById('mapCanvas');
   if (!canvas || !img || !img.naturalWidth) return;
   var vw = window.innerWidth, vh = window.innerHeight;
+  var dpr = window.devicePixelRatio || 1;
   var isPortrait = vh > vw;
-  canvas.width = vw; canvas.height = vh;
+  canvas.width = vw * dpr; canvas.height = vh * dpr;
+  canvas.style.width = vw + 'px'; canvas.style.height = vh + 'px';
   var ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
   ctx.clearRect(0, 0, vw, vh);
   if (isPortrait) {
-    // Rotate image 90° CW so it reads correctly when phone is turned left
     ctx.save();
     ctx.translate(vw, 0);
     ctx.rotate(Math.PI / 2);
-    // Now drawing in rotated space: width=vh, height=vw
     var scale = Math.min(vh / img.naturalWidth, vw / img.naturalHeight);
     var dw = img.naturalWidth * scale, dh = img.naturalHeight * scale;
     var dx = (vh - dw) / 2, dy = (vw - dh) / 2;
@@ -1506,8 +1508,8 @@ function drawMapOnCanvas() {
 function doOpenMap() {
   _mapUses++;
   if (_mapUses >= 2) _mapUsed = true;
-  addP(10/60, 'Carte consultée (+10 sec)');
-  toast('+10 sec — Carte (' + _mapUses + '/2)');
+  addP(12/60, 'Carte consultée (+12 sec)');
+  toast('+12 sec — Carte (' + _mapUses + '/2)');
   vibrate(VIB.map);
   // Griser le bouton si 2 uses spent
   var btn = document.getElementById('btnMap');
@@ -1545,7 +1547,7 @@ function doOpenMap() {
       if (timer) {
         timer.style.cssText = 'font-family:Cinzel,serif;font-size:24px;color:var(--gold);letter-spacing:3px;position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(6,4,2,.8);padding:4px 16px;border-radius:20px;border:1px solid rgba(201,168,76,.3);z-index:1';
       }
-      var sec = 10;
+      var sec = 12;
       if (timer) timer.textContent = sec;
       var iv = setInterval(function() {
         sec--;
