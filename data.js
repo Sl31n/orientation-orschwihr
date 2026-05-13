@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.15.0';
+const APP_VERSION = '1.16.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -215,7 +215,7 @@ const HINTS = {
       "La Mairie — 11 rue de Soultzmatt."
     ],
     egyptien: [  // → Cave
-      "Dionysos foulait les raisins sous ses pieds nus. Ici, des vignerons alsaciens ont pris le relais.",
+      "L'héritage d'Osiris y perdure.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
       "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
@@ -264,7 +264,7 @@ const ACC = {
   mairie:   ["mairie","la mairie","soultzmatt"],
   cave:     ["cave","la cave","vigne","vignoble","cave viticole","albrecht","domaine albrecht","albrecht lucien"],
   cafe:     ["cafe","café","laffy","chez laffy","bar","5e lieu","cinquieme lieu","cinquième lieu"],
-  ferme:    ["ferme","gite","gîte","depart","départ","base","hébergement","hebergement","airbnb"]
+  ferme:    ["gite","gîte","depart","départ","base","hébergement","hebergement","airbnb","logement","notre airbnb"]
 };
 
 const CITS = {

@@ -746,11 +746,11 @@ function showCode(cpk) {
   setText('s7title',  t.name);
   var s7cpEl=document.getElementById('s7cpName'); if(s7cpEl) s7cpEl.innerHTML=(cp.icon?'<img class="cp-img sm" src="'+cp.icon+'"> ':'')+cp.name;
   setText('s7cpAddr', cp.addr);
-  // Update subtitle for ferme arrival code
+  // Update subtitle for logement arrival code
   var s7sub=document.querySelector('#s7 .hdr .hs');
   if(s7sub) s7sub.textContent = cpk==='ferme' ? 'Code d\'arrivée' : 'Entrez le code de la cachette';
   setText('codeErr',  '');
-  // Hide "Revoir les indices" on ferme code screen (no previous hints)
+  // Hide "Revoir les indices" on logement code screen (no previous hints)
   var bhBtn=document.getElementById('btnBackHintsCode'); if(bhBtn) bhBtn.style.display=(cpk==='ferme'?'none':'');
   mkSteps('st7');
   buildCodeRow();
@@ -963,7 +963,7 @@ function confirmDest(inputId, errId, nextKey, onSuccess) {
 }
 
 // ═══════════════════════════════════════════
-// RETOUR À LA FERME (écran thématisé)
+// RETOUR AU LOGEMENT (écran thématisé)
 // ═══════════════════════════════════════════
 function showReturnHome() {
   var t = S.team; th(t);
@@ -1051,7 +1051,7 @@ function showArrival() {
         +'<div class="tl-name" style="color:'+tc+'">'+(cp?(cp.icon?'<img class="cp-img sm" src="'+cp.icon+'"> ':'')+cp.name:ct.cp)+'</div>'
         +'<div class="tl-time">+'+fmt(leg)+' (à '+fmt(ct.t-S.t0)+')</div></div>';
     });
-    // Retour ferme
+    // Retour logement
     var lastLeg=endTime-S.t0-(S.cpTimes.length?S.cpTimes[S.cpTimes.length-1].t-S.t0:0);
     tlHtml+='<div class="tl-item"><div class="tl-dot done" style="border-color:var(--gold);background:var(--gold)"></div>'
       +'<div class="tl-name" style="color:var(--gold)">Arrivée — Notre Airbnb</div>'
