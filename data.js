@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.14.0';
+const APP_VERSION = '1.15.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -97,7 +97,7 @@ const HINTS = {
       "La Mairie — 11 rue de Soultzmatt."
     ],
     hindou: [  // Airbnb → Cave
-      "Dionysos lui-même y viendrait en pèlerinage. Ce lieu garde le fruit de la vigne et le labeur des hommes.",
+      "Soma, nectar des dieux, coulait des hauteurs du ciel.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village produit les grands crus d'Alsace — cherchez l'entrée de leur cave.",
       "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
@@ -120,7 +120,7 @@ const HINTS = {
     ],
     nordique: [  // → Cave (DERNIER CP)
       "Comme Sigurd de retour de sa quête, votre saga approche de son terme. Une dernière étape vous attend.",
-      "Dionysos lui-même y viendrait en pèlerinage. Ce lieu garde le fruit de la vigne.",
+      "Les Ases brassaient leur hydromel à Ásgarðr. Ce lieu garde les mêmes secrets.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
       "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
     ],
@@ -187,7 +187,7 @@ const HINTS = {
       "Le Pressoir — 26 Rue de Soultzmatt, Orschwihr."
     ],
     egyptien: [  // → Église
-      "Chaque polis avait son temenos. Dans le village, cherchez l'héritier du monde qu'Olympe a engendré.",
+      "Amon-Rà résidait dans son naos, inaccessible aux profanes. À Orschwihr, un bâtiment élève encore les hommes vers ce qui les dépasse.",
       "On ne m'habite pas, mais on vient me voir pour être habité. J'abrite sans loger et j'élève sans enfanter.",
       "Un édifice de pierre consacré à Notre-Dame — son nom évoque l'élévation vers le ciel.",
       "L'Église Notre-Dame de l'Assomption — Rue de l'Église."
