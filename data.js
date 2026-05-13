@@ -1,9 +1,9 @@
 // ═══════════════════════════════════════════
 // CONFIG
 // ═══════════════════════════════════════════
-const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
+const MJ_CODE = "padawan";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.0.0';
+const APP_VERSION = '1.1.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -15,7 +15,7 @@ const TEAMS = {
     key:"grec", name:"Équipe Grecque", mascot:"", tagline:"Les Enfants de l'Olympe",
     flavor:"Ô héros d'Athéna ! Comme Ulysse, vous voilà lancés dans une odyssée alsacienne, boussole en main, sous le regard bienveillant de la chouette de la sagesse.",
     arrival:"Comme Ulysse retrouvant Ithaque après vingt ans d'errance, votre odyssée s'achève ici.",
-    members:["Joueur 1","Joueur 2","Joueur 3"],
+    members:["Louis","Quentin","François"],
     color:"#5a8fd4", colorLight:"#2a5a9a", bg:"rgba(90,143,212,0.12)", border:"rgba(90,143,212,0.32)",
     route:["eglise","mairie","cave","secret","fontaine"],
     emblem:'./emblem-grec.webp',
@@ -25,7 +25,7 @@ const TEAMS = {
     key:"nordique", name:"Équipe Nordique", mascot:"", tagline:"Les Guerriers du Valhalla",
     flavor:"Guerriers du Valhalla ! Odin a tracé votre saga sur les feuilles d'Yggdrasil. Le corbeau noir vole devant vous — suivez-le dans les ruelles d'Orschwihr.",
     arrival:"Comme Sigurd de retour de sa quête, vos exploits seront chantés au mead-hall ce soir.",
-    members:["Joueur 4","Joueur 5","Joueur 6"],
+    members:["Luc","Julien","Louis Stephan"],
     color:"#c8c8c8", colorLight:"#5a5a5a", bg:"rgba(160,160,160,0.10)", border:"rgba(160,160,160,0.28)",
     route:["mairie","secret","fontaine","eglise","cave"],
     emblem:'./emblem-nordique.webp',
@@ -35,7 +35,7 @@ const TEAMS = {
     key:"hindou", name:"Équipe Hindoue", mascot:"", tagline:"Les Disciples du Dharma",
     flavor:"Disciples du Dharma ! Le tigre sacré ouvre la voie. Chaque checkpoint est une étape de votre yatra — votre pèlerinage alsacien vers le moksha.",
     arrival:"Votre yatra s'achève. Le moksha vous attend — repos mérité après ce périple.",
-    members:["Joueur 7","Joueur 8","Joueur 9"],
+    members:["Léo","Clément","Antoine"],
     color:"#c080e8", colorLight:"#7a3aa0", bg:"rgba(160,80,200,0.12)", border:"rgba(160,80,200,0.32)",
     route:["cave","fontaine","secret","mairie","eglise"],
     emblem:'./emblem-hindou.webp',
@@ -45,7 +45,7 @@ const TEAMS = {
     key:"egyptien", name:"Équipe Égyptienne", mascot:"", tagline:"Les Enfants du Nil",
     flavor:"Enfants du Nil ! Rà illumine votre chemin à travers les vignes d'Orschwihr. Comme les scribes de Thoth, lisez les indices et percez les secrets du village.",
     arrival:"Comme le soleil de Rà touchant l'horizon, votre odyssée alsacienne s'achève en gloire.",
-    members:["Joueur 10","Joueur 11","Joueur 12"],
+    members:["Lucas","Lucie","Antoine"],
     color:"#d4a02a", colorLight:"#9a7010", bg:"rgba(212,160,42,0.12)", border:"rgba(212,160,42,0.32)",
     route:["fontaine","secret","cave","eglise","mairie"],
     emblem:'./emblem-egyptien.webp',
@@ -68,7 +68,7 @@ const CPS = {
   mairie:   {name:"La Mairie",              icon:"./cp-mairie.webp",   addr:"11 rue de Soultzmatt, Orschwihr",    code:"LOIS"},
   cave:     {name:"La Cave",                icon:"./cp-cave.webp",     addr:"[À compléter après repérage]",       code:"VINS"},
   secret:   {name:"Le 5e Lieu",             icon:"./cp-secret.webp",   addr:"[À compléter après repérage]",       code:"????"},
-  ferme:    {name:"Votre point de départ",  icon:"",                   addr:"[Adresse du gîte/hébergement]",      code:"FINI"}
+  ferme:    {name:"Votre point de départ",  icon:"",                   addr:"29 Grand Rue, Orschwihr, Grand Est 68500, France",      code:"FINI"}
 };
 
 // ─────────────────────────────────────────────────────────────────
@@ -128,7 +128,7 @@ const HINTS = {
       "Votre yatra touche à sa fin. Retournez au point de départ — là où votre odyssée alsacienne a commencé.",
       "Le chemin du retour est le même que celui du départ.",
       "Retournez à votre hébergement.",
-      "Votre point de départ — [Adresse du gîte]."
+      "Votre point de départ — 29 Grand Rue, Orschwihr."
     ],
     egyptien: [  // → Mairie (DERNIER CP)
       "Comme le pharaon régnant depuis son palais, un seul bâtiment administre les destins du village.",
@@ -162,7 +162,7 @@ const HINTS = {
       "Comme le soleil de Rà touchant l'horizon, votre odyssée alsacienne s'achève. Retournez au point de départ.",
       "Le chemin du retour est le même que celui du départ.",
       "Retournez à votre hébergement.",
-      "Votre point de départ — [Adresse du gîte]."
+      "Votre point de départ — 29 Grand Rue, Orschwihr."
     ]
   },
 
@@ -178,7 +178,7 @@ const HINTS = {
       "Comme Sigurd de retour de sa quête, votre saga s'achève. Retournez au point de départ.",
       "Le chemin du retour est le même que celui du départ.",
       "Retournez à votre hébergement.",
-      "Votre point de départ — [Adresse du gîte]."
+      "Votre point de départ — 29 Grand Rue, Orschwihr."
     ],
     hindou: [  // → Fontaine
       "Comme le Gange purifie les âmes, une source ancienne attend vos libations.",
@@ -228,7 +228,7 @@ const HINTS = {
       "Comme Ulysse apercevant Ithaque, votre odyssée alsacienne s'achève. Retournez au point de départ.",
       "Le chemin du retour est le même que celui du départ.",
       "Retournez à votre hébergement.",
-      "Votre point de départ — [Adresse du gîte]."
+      "Votre point de départ — 29 Grand Rue, Orschwihr."
     ],
     nordique: [  // → Église
       "Le temple d'Ásgarðr n'a qu'un héritier à Midgard — un lieu où un seul dieu règne.",
