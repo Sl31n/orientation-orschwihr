@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════
 // MJ MODE (remplace TEST_MODE)
 // ═══════════════════════════════════════════
-var _mjMode = true;
+var _mjMode = false;
 function isMJ() { return _mjMode; }
 function activateMJ() {
   _mjMode = true;
@@ -24,7 +24,7 @@ function syncMJOverlay() {
 // ═══════════════════════════════════════════
 var S = {
   team:null, idx:0, t0:null, pen:0, oh:{}, iv:null,
-  onPen:false, plog:[], mjT:"grec", mjC:"fresque",
+  onPen:false, plog:[], mjT:"grec", mjC:"ferme",
   mjST:{}, mjEnd:{}, mjPen:{}, mjIv:null, pendingTeam:null, quizAnswers:{},
   cpTimes:[]
 };
@@ -1249,7 +1249,7 @@ function renderMJTabs() {
     var cp=CPS[ck];
     var btn=document.createElement('button'); btn.className='mjtb'+(S.mjC===ck?' on':'');
     if(S.mjC===ck){btn.style.color='var(--gold)';btn.style.background='var(--gd)';btn.style.borderColor='var(--gb)';}
-    var label=cp.name.replace('Église Saint-Jean-Baptiste','Église').replace('La Mairie','Mairie').replace('Le Lavoir','Lavoir').replace('La Fresque du portail','Fresque').replace('Salle Polyvalente de la Rose','Salle').replace("La Ferme d'Octave","Ferme (depart)");
+    var label=cp.name.replace("L'Église Notre-Dame",'Église').replace('La Mairie','Mairie').replace('Le Domaine Albrecht','Albrecht').replace('Le Pressoir','Pressoir').replace('Chez Laffy','Laffy').replace('Votre point de départ','Départ');
     btn.textContent=label;
     btn.addEventListener('click',(function(key){return function(){S.mjC=key;renderMJTabs();renderMJContent();};})(ck));
     ct.appendChild(btn);
