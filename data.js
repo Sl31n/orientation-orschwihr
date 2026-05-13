@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "padawan";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '1.2.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -64,7 +64,7 @@ const ENIGMES = {
 
 const CPS = {
   eglise:   {name:"L'Église Notre-Dame",    icon:"./cp-eglise.webp",   addr:"Rue de l'Église, Orschwihr",         code:"DAME"},
-  fontaine: {name:"La Fontaine Historique", icon:"./cp-fontaine.webp", addr:"Rue de l'Église, Orschwihr",         code:"ONDE"},
+  fontaine: {name:"Le Pressoir",            icon:"./cp-fontaine.webp", addr:"[À confirmer après repérage]",       code:"ONDE"},
   mairie:   {name:"La Mairie",              icon:"./cp-mairie.webp",   addr:"11 rue de Soultzmatt, Orschwihr",    code:"LOIS"},
   cave:     {name:"La Cave",                icon:"./cp-cave.webp",     addr:"[À compléter après repérage]",       code:"VINS"},
   secret:   {name:"Le 5e Lieu",             icon:"./cp-secret.webp",   addr:"[À compléter après repérage]",       code:"????"},
@@ -102,11 +102,11 @@ const HINTS = {
       "Un domaine viticole du village produit les grands crus d'Alsace — cherchez l'entrée de leur cave.",
       "La cave viticole — [À préciser après repérage]."
     ],
-    egyptien: [  // Base → Fontaine
-      "Comme le Nil irrigue les terres d'Égypte, une source ancienne abreuve ce village depuis des siècles.",
-      "Mon bassin compte dix faces, ma colonne en compte huit. Les géomètres me reconnaîtraient.",
-      "Un monument classé aux Monuments Historiques, une colonne au centre d'un bassin décagonal.",
-      "La Fontaine Historique — Rue de l'Église."
+    egyptien: [  // Base → Pressoir
+      "Comme Osiris pressait l'âme des morts pour la peser, les hommes ici pressent le fruit pour en extraire la vie.",
+      "Je ne jaillis pas — je m'extrais. Une vis géante me commande, et sous ma pression, le précieux liquide coule.",
+      "Un pressoir alsacien : l'outil ancestral du vigneron, là où le raisin devient jus avant de devenir vin.",
+      "Le Pressoir — [adresse à confirmer après repérage]."
     ]
   },
 
@@ -180,11 +180,11 @@ const HINTS = {
       "Retournez à votre hébergement.",
       "Votre point de départ — 29 Grand Rue, Orschwihr."
     ],
-    hindou: [  // → Fontaine
-      "Comme le Gange purifie les âmes, une source ancienne attend vos libations.",
-      "Mon bassin compte dix faces, ma colonne en compte huit. Les géomètres me reconnaîtraient.",
-      "Un monument classé aux Monuments Historiques, une colonne au centre d'un bassin décagonal.",
-      "La Fontaine Historique — Rue de l'Église."
+    hindou: [  // → Pressoir
+      "Avant le Soma sacré des Védas, une pression. Cherchez l'instrument par lequel le divin s'extrait du terrestre.",
+      "Je ne suis ni puits ni source. La vis est mon bras, le plateau est ma paume. J'écrase pour libérer.",
+      "Un pressoir à raisin — la machine du vigneron, celle qui précède la cave et le tonneau.",
+      "Le Pressoir — [adresse à confirmer après repérage]."
     ],
     egyptien: [  // → Église
       "Chaque polis avait son temenos. Dans le village, cherchez l'héritier du monde qu'Olympe a engendré.",
@@ -196,17 +196,17 @@ const HINTS = {
 
   // ── SECRET → prochaine étape ──────────────────────────────────
   secret: {
-    grec: [  // → Fontaine
-      "Comme le Nil irrigue les terres d'Égypte, une source ancienne abreuve ce village depuis des siècles.",
-      "Mon bassin compte dix faces, ma colonne en compte huit. Les géomètres me reconnaîtraient.",
-      "Un monument classé aux Monuments Historiques, une colonne au centre d'un bassin décagonal.",
-      "La Fontaine Historique — Rue de l'Église."
+    grec: [  // → Pressoir
+      "Même Dionysos, avant ses libations, avait besoin qu'on presse les grappes. Cherchez l'outil qui précède tout festin.",
+      "Je ne coule pas — je force. La vis, le bois, la pression : voilà mes trois vertus.",
+      "Un pressoir à raisin, héritage vigneron d'Alsace. Là où la grappe cède sous le poids du bois.",
+      "Le Pressoir — [adresse à confirmer après repérage]."
     ],
-    nordique: [  // → Fontaine
-      "Mimir l'honore de sa sagesse. L'eau, source de toute connaissance, jaillit ici sous une forme sculptée.",
-      "Mon bassin compte dix faces, ma colonne en compte huit. Les géomètres me reconnaîtraient.",
-      "Un monument classé aux Monuments Historiques, une colonne au centre d'un bassin décagonal.",
-      "La Fontaine Historique — Rue de l'Église."
+    nordique: [  // → Pressoir
+      "Les nains brassèrent l'hydromel de Kvasir en pressant le sang du sage. Trouvez ici l'art ancestral de la pression.",
+      "Je ne suis ni puits ni fontaine, mais par moi le liquide naît. Cherchez la grande vis de bois des vignerons.",
+      "Un pressoir alsacien, témoin du labeur viticole. Là où la force mécanique extrait la richesse du raisin.",
+      "Le Pressoir — [adresse à confirmer après repérage]."
     ],
     hindou: [  // → Mairie
       "Ce que Dharma exigeait d'ordonner, les hommes l'ont consacré sans dieu.",
