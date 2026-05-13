@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "padawan";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.3.0';
+const APP_VERSION = '1.4.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -64,10 +64,10 @@ const ENIGMES = {
 
 const CPS = {
   eglise:   {name:"L'Église Notre-Dame",    icon:"./cp-eglise.webp",   addr:"Rue de l'Église, Orschwihr",         code:"DAME"},
-  fontaine: {name:"Le Pressoir",            icon:"./cp-fontaine.webp", addr:"[À confirmer après repérage]",       code:"ONDE"},
+  fontaine: {name:"Le Pressoir",            icon:"./cp-fontaine.webp", addr:"26 Rue de Soultzmatt, Orschwihr",    code:"ONDE"},
   mairie:   {name:"La Mairie",              icon:"./cp-mairie.webp",   addr:"11 rue de Soultzmatt, Orschwihr",    code:"LOIS"},
   cave:     {name:"La Cave",                icon:"./cp-cave.webp",     addr:"[À compléter après repérage]",       code:"VINS"},
-  secret:   {name:"Le 5e Lieu",             icon:"./cp-secret.webp",   addr:"[À compléter après repérage]",       code:"????"},
+  secret:   {name:"Chez Laffy",             icon:"./cp-secret.webp",   addr:"Rue de Bergholtz-Zell, Orschwihr",   code:"????"},
   ferme:    {name:"Votre point de départ",  icon:"",                   addr:"29 Grand Rue, Orschwihr, Grand Est 68500, France",      code:"FINI"}
 };
 
@@ -103,10 +103,10 @@ const HINTS = {
       "La cave viticole — [À préciser après repérage]."
     ],
     egyptien: [  // Base → Pressoir
-      "Comme Osiris pressait l'âme des morts pour la peser, les hommes ici pressent le fruit pour en extraire la vie.",
-      "Je ne jaillis pas — je m'extrais. Une vis géante me commande, et sous ma pression, le précieux liquide coule.",
-      "Un pressoir alsacien : l'outil ancestral du vigneron, là où le raisin devient jus avant de devenir vin.",
-      "Le Pressoir — [adresse à confirmer après repérage]."
+      "Les anneaux d'Apep serrent pour détruire. Ici, les anneaux serrent pour créer.",
+      "Je ne suis ni puits ni source. La vis est mon bras, le plateau est ma paume. J'écrase pour libérer.",
+      "L'outil en bois ancestral du vigneron, là où le raisin devient jus avant de devenir vin.",
+      "Le Pressoir — 26 Rue de Soultzmatt, Orschwihr."
     ]
   },
 
@@ -150,7 +150,7 @@ const HINTS = {
       "Même les dieux d'Asgard avaient leurs sanctuaires cachés. Ce lieu n'est pas sur toutes les cartes.",
       "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
       "Dans tout village du Midgard, une taverne rassemble les guerriers après la bataille. Cherchez le café du village.",
-      "Chez Laffy — [adresse à confirmer après repérage]."
+      "Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
     ],
     hindou: [  // → Église (DERNIER CP)
       "Aucun Brahmane n'y porte le feu d'Agni, car un seul homme a verticalisé son karma.",
@@ -172,7 +172,7 @@ const HINTS = {
       "Héphaistos cachait ses forges dans les entrailles de la terre. Un lieu secret vous attend.",
       "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
       "Même les héros ont soif entre deux épreuves. Cherchez la taverne du village, là où les mortels se retrouvent.",
-      "Chez Laffy — [adresse à confirmer après repérage]."
+      "Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
     ],
     nordique: [  // → Base (DERNIER CP)
       "Comme Sigurd de retour de sa quête, votre saga s'achève. Retournez au point de départ.",
@@ -181,10 +181,10 @@ const HINTS = {
       "Votre point de départ — 29 Grand Rue, Orschwihr."
     ],
     hindou: [  // → Pressoir
-      "Avant le Soma sacré des Védas, une pression. Cherchez l'instrument par lequel le divin s'extrait du terrestre.",
+      "Les dieux enroulèrent Vasuki autour de Mandara pour faire tourner l'océan et en extraire l'amrita. Cherchez à Orschwihr ce qui pratique le même art.",
       "Je ne suis ni puits ni source. La vis est mon bras, le plateau est ma paume. J'écrase pour libérer.",
-      "Un pressoir à raisin — la machine du vigneron, celle qui précède la cave et le tonneau.",
-      "Le Pressoir — [adresse à confirmer après repérage]."
+      "L'outil en bois ancestral du vigneron, là où le raisin devient jus avant de devenir vin.",
+      "Le Pressoir — 26 Rue de Soultzmatt, Orschwihr."
     ],
     egyptien: [  // → Église
       "Chaque polis avait son temenos. Dans le village, cherchez l'héritier du monde qu'Olympe a engendré.",
@@ -197,16 +197,16 @@ const HINTS = {
   // ── SECRET → prochaine étape ──────────────────────────────────
   secret: {
     grec: [  // → Pressoir
-      "Même Dionysos, avant ses libations, avait besoin qu'on presse les grappes. Cherchez l'outil qui précède tout festin.",
-      "Je ne coule pas — je force. La vis, le bois, la pression : voilà mes trois vertus.",
-      "Un pressoir à raisin, héritage vigneron d'Alsace. Là où la grappe cède sous le poids du bois.",
-      "Le Pressoir — [adresse à confirmer après repérage]."
+      "Ananke enserre l'œuf du monde dans ses anneaux. Dans ce village, son héritier pratique la même étreinte.",
+      "Je ne suis ni puits ni source. La vis est mon bras, le plateau est ma paume. J'écrase pour libérer.",
+      "L'outil en bois ancestral du vigneron, là où le raisin devient jus avant de devenir vin.",
+      "Le Pressoir — 26 Rue de Soultzmatt, Orschwihr."
     ],
     nordique: [  // → Pressoir
-      "Les nains brassèrent l'hydromel de Kvasir en pressant le sang du sage. Trouvez ici l'art ancestral de la pression.",
-      "Je ne suis ni puits ni fontaine, mais par moi le liquide naît. Cherchez la grande vis de bois des vignerons.",
-      "Un pressoir alsacien, témoin du labeur viticole. Là où la force mécanique extrait la richesse du raisin.",
-      "Le Pressoir — [adresse à confirmer après repérage]."
+      "Jörmungandr étreint Midgard sans que les hommes le voient. À Orschwihr, quelque chose serre de même, silencieusement, inexorablement.",
+      "Je ne suis ni puits ni source. La vis est mon bras, le plateau est ma paume. J'écrase pour libérer.",
+      "L'outil en bois ancestral du vigneron, là où le raisin devient jus avant de devenir vin.",
+      "Le Pressoir — 26 Rue de Soultzmatt, Orschwihr."
     ],
     hindou: [  // → Mairie
       "Ce que Dharma exigeait d'ordonner, les hommes l'ont consacré sans dieu.",
@@ -240,13 +240,13 @@ const HINTS = {
       "Même les dieux d'Asgard avaient leurs sanctuaires cachés. Ce lieu n'est pas sur toutes les cartes.",
       "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
       "L'ashram des mortels ordinaires : le café du village, où l'on refait le monde autour d'un verre.",
-      "Chez Laffy — [adresse à confirmer après repérage]."
+      "Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
     ],
     egyptien: [  // → Secret
       "Comme Anubis gardait les secrets des morts, ce lieu garde un secret bien vivant.",
       "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
       "Là où les habitants d'Orschwihr se retrouvent pour boire et parler. Le café du village vous attend.",
-      "Chez Laffy — [adresse à confirmer après repérage]."
+      "Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
     ]
   }
 };
