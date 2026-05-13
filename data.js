@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "padawan";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.2.0';
+const APP_VERSION = '1.3.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -149,8 +149,8 @@ const HINTS = {
     nordique: [  // → Secret
       "Même les dieux d'Asgard avaient leurs sanctuaires cachés. Ce lieu n'est pas sur toutes les cartes.",
       "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
-      "[Indice III — À remplir après repérage]",
-      "[Indice IV — À remplir après repérage]"
+      "Dans tout village du Midgard, une taverne rassemble les guerriers après la bataille. Cherchez le café du village.",
+      "Chez Laffy — [adresse à confirmer après repérage]."
     ],
     hindou: [  // → Église (DERNIER CP)
       "Aucun Brahmane n'y porte le feu d'Agni, car un seul homme a verticalisé son karma.",
@@ -171,8 +171,8 @@ const HINTS = {
     grec: [  // → Secret
       "Héphaistos cachait ses forges dans les entrailles de la terre. Un lieu secret vous attend.",
       "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
-      "[Indice III — À remplir après repérage]",
-      "[Indice IV — À remplir après repérage]"
+      "Même les héros ont soif entre deux épreuves. Cherchez la taverne du village, là où les mortels se retrouvent.",
+      "Chez Laffy — [adresse à confirmer après repérage]."
     ],
     nordique: [  // → Base (DERNIER CP)
       "Comme Sigurd de retour de sa quête, votre saga s'achève. Retournez au point de départ.",
@@ -239,14 +239,14 @@ const HINTS = {
     hindou: [  // → Secret
       "Même les dieux d'Asgard avaient leurs sanctuaires cachés. Ce lieu n'est pas sur toutes les cartes.",
       "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
-      "[Indice III — À remplir après repérage]",
-      "[Indice IV — À remplir après repérage]"
+      "L'ashram des mortels ordinaires : le café du village, où l'on refait le monde autour d'un verre.",
+      "Chez Laffy — [adresse à confirmer après repérage]."
     ],
     egyptien: [  // → Secret
       "Comme Anubis gardait les secrets des morts, ce lieu garde un secret bien vivant.",
       "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
-      "[Indice III — À remplir après repérage]",
-      "[Indice IV — À remplir après repérage]"
+      "Là où les habitants d'Orschwihr se retrouvent pour boire et parler. Le café du village vous attend.",
+      "Chez Laffy — [adresse à confirmer après repérage]."
     ]
   }
 };
