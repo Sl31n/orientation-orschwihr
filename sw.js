@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════
 // SERVICE WORKER — EVG Orschwihr PWA
 // ═══════════════════════════════════════════
-var CACHE = 'orschwihr-v13';
+var CACHE = 'orschwihr-v14';
 var PRECACHE = ['./', './index.html', './data.js', './game.js', './logo.png', './manifest.json', './Carte.png', './badge.png', './emblem-grec.webp', './emblem-nordique.webp', './emblem-hindou.webp', './emblem-egyptien.webp', './splash-compass.webp', './victory-laurel.webp', './bg-parchment.webp', './cp-eglise.webp', './cp-fontaine.webp', './cp-mairie.webp', './cp-cave.webp', './cp-secret.webp', './bg-grec.webp', './bg-nordique.webp', './bg-hindou.webp', './bg-egyptien.webp'];
 
 self.addEventListener('install', function(e) {

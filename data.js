@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.12.0';
+const APP_VERSION = '1.13.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -93,7 +93,7 @@ const HINTS = {
     nordique: [  // Base → Mairie
       "Odin lisait les runes du destin, mais celui des hommes de Midgard s'écrit sans divinité.",
       "Je garde moins de secrets que de preuves, et bien des instants décisifs passent par moi.",
-      "La loi s'affiche sur ce bâtiment que chaque commune possède.",
+      "Les décrets s'affichent sur ce bâtiment que chaque commune possède.",
       "La Mairie — 11 rue de Soultzmatt."
     ],
     hindou: [  // Base → Cave
@@ -113,9 +113,9 @@ const HINTS = {
   // ── ÉGLISE → prochaine étape ──────────────────────────────────
   eglise: {
     grec: [  // → Mairie
-      "Solon a donné ses lois à Athènes — dans chaque cité, un édifice garde les registres du destin civique.",
+      "À Athènes, les actes de la cité étaient gravés dans la pierre et exposés sur l'Agora.",
       "Je garde moins de secrets que de preuves, et bien des instants décisifs passent par moi.",
-      "La loi s'affiche sur ce bâtiment que chaque commune possède.",
+      "Les décrets s'affichent sur ce bâtiment que chaque commune possède.",
       "La Mairie — 11 rue de Soultzmatt."
     ],
     nordique: [  // → Cave (DERNIER CP)
@@ -131,9 +131,9 @@ const HINTS = {
       "Notre Airbnb — 29 Grand Rue, Orschwihr."
     ],
     egyptien: [  // → Mairie (DERNIER CP)
-      "Comme le pharaon régnant depuis son palais, un seul bâtiment administre les destins du village.",
+      "Les scribes du Per-Medjat tenaient le registre de toutes les existences.",
       "Je garde moins de secrets que de preuves, et bien des instants décisifs passent par moi.",
-      "La loi s'affiche sur ce bâtiment que chaque commune possède.",
+      "Les décrets s'affichent sur ce bâtiment que chaque commune possède.",
       "La Mairie — 11 rue de Soultzmatt."
     ]
   },
@@ -211,7 +211,7 @@ const HINTS = {
     hindou: [  // → Mairie
       "Ce que Dharma exigeait d'ordonner, les hommes l'ont consacré sans dieu.",
       "Je garde moins de secrets que de preuves, et bien des instants décisifs passent par moi.",
-      "La loi s'affiche sur ce bâtiment que chaque commune possède.",
+      "Les décrets s'affichent sur ce bâtiment que chaque commune possède.",
       "La Mairie — 11 rue de Soultzmatt."
     ],
     egyptien: [  // → Cave

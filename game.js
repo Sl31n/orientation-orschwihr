@@ -1054,7 +1054,7 @@ function showArrival() {
     // Retour ferme
     var lastLeg=endTime-S.t0-(S.cpTimes.length?S.cpTimes[S.cpTimes.length-1].t-S.t0:0);
     tlHtml+='<div class="tl-item"><div class="tl-dot done" style="border-color:var(--gold);background:var(--gold)"></div>'
-      +'<div class="tl-name" style="color:var(--gold)">Arrivée — La Ferme</div>'
+      +'<div class="tl-name" style="color:var(--gold)">Arrivée — Notre Airbnb</div>'
       +'<div class="tl-time">+'+fmt(lastLeg)+' (total '+fmt(el)+')</div></div>';
     tlHtml+='</div>';
   }
