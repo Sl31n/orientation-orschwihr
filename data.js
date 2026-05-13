@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "padawan";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.4.0';
+const APP_VERSION = '1.5.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -66,8 +66,8 @@ const CPS = {
   eglise:   {name:"L'Église Notre-Dame",    icon:"./cp-eglise.webp",   addr:"Rue de l'Église, Orschwihr",         code:"DAME"},
   fontaine: {name:"Le Pressoir",            icon:"./cp-fontaine.webp", addr:"26 Rue de Soultzmatt, Orschwihr",    code:"ONDE"},
   mairie:   {name:"La Mairie",              icon:"./cp-mairie.webp",   addr:"11 rue de Soultzmatt, Orschwihr",    code:"LOIS"},
-  cave:     {name:"La Cave",                icon:"./cp-cave.webp",     addr:"[À compléter après repérage]",       code:"VINS"},
-  secret:   {name:"Chez Laffy",             icon:"./cp-secret.webp",   addr:"Rue de Bergholtz-Zell, Orschwihr",   code:"????"},
+  cave:     {name:"Le Domaine Albrecht",     icon:"./cp-cave.webp",     addr:"28 Rue du Printemps, Orschwihr",     code:"VINS"},
+  secret:   {name:"Chez Laffy",             icon:"./cp-secret.webp",   addr:"Rue de Bergholtz-Zell, Orschwihr",   code:"CAFE"},
   ferme:    {name:"Votre point de départ",  icon:"",                   addr:"29 Grand Rue, Orschwihr, Grand Est 68500, France",      code:"FINI"}
 };
 
@@ -75,10 +75,10 @@ const CPS = {
 // HINTS : clé = CP venant d'être validé → indices vers le SUIVANT
 //
 // Routes (5 CP chacune) :
-//   Grec     : Base → Église → Mairie → Cave → Secret → Fontaine → Base
-//   Nordique : Base → Mairie → Secret → Fontaine → Église → Cave → Base
-//   Hindou   : Base → Cave → Fontaine → Secret → Mairie → Église → Base
-//   Égyptien : Base → Fontaine → Secret → Cave → Église → Mairie → Base
+//   Grec     : Base → Église → Mairie → Albrecht → Laffy → Pressoir → Base
+//   Nordique : Base → Mairie → Laffy → Pressoir → Église → Albrecht → Base
+//   Hindou   : Base → Albrecht → Pressoir → Laffy → Mairie → Église → Base
+//   Égyptien : Base → Pressoir → Laffy → Albrecht → Église → Mairie → Base
 // ─────────────────────────────────────────────────────────────────
 const HINTS = {
 
@@ -100,7 +100,7 @@ const HINTS = {
       "Dionysos lui-même y viendrait en pèlerinage. Ce lieu garde le fruit de la vigne et le labeur des hommes.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village produit les grands crus d'Alsace — cherchez l'entrée de leur cave.",
-      "La cave viticole — [À préciser après repérage]."
+      "Le Domaine Albrecht — 28 Rue du Printemps, Orschwihr."
     ],
     egyptien: [  // Base → Pressoir
       "Les anneaux d'Apep serrent pour détruire. Ici, les anneaux serrent pour créer.",
@@ -122,7 +122,7 @@ const HINTS = {
       "Comme Sigurd de retour de sa quête, votre saga approche de son terme. Un dernier secret vous attend.",
       "Dionysos lui-même y viendrait en pèlerinage. Ce lieu garde le fruit de la vigne.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
-      "La cave viticole — [À préciser après repérage]."
+      "Le Domaine Albrecht — 28 Rue du Printemps, Orschwihr."
     ],
     hindou: [  // → Base (DERNIER CP)
       "Votre yatra touche à sa fin. Retournez au point de départ — là où votre odyssée alsacienne a commencé.",
@@ -144,13 +144,13 @@ const HINTS = {
       "Dionysos foulait les raisins sous ses pieds nus. Ici, des vignerons alsaciens ont pris le relais.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
-      "La cave viticole — [À préciser après repérage]."
+      "Le Domaine Albrecht — 28 Rue du Printemps, Orschwihr."
     ],
-    nordique: [  // → Secret
-      "Même les dieux d'Asgard avaient leurs sanctuaires cachés. Ce lieu n'est pas sur toutes les cartes.",
-      "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
-      "Dans tout village du Midgard, une taverne rassemble les guerriers après la bataille. Cherchez le café du village.",
-      "Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
+    nordique: [  // → Secret (Chez Laffy)
+      "Heorot n'était ni temple ni forteresse. L'endroit où les guerriers posaient leurs armes et s'asseyaient ensemble.",
+      "Je sers à boire, à parler, et parfois à refaire le monde.",
+      "Là où les habitants d'Orschwihr se retrouvent depuis toujours. Je peux aussi être servi court ou long.",
+      "Le café Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
     ],
     hindou: [  // → Église (DERNIER CP)
       "Aucun Brahmane n'y porte le feu d'Agni, car un seul homme a verticalisé son karma.",
@@ -168,11 +168,11 @@ const HINTS = {
 
   // ── CAVE → prochaine étape ────────────────────────────────────
   cave: {
-    grec: [  // → Secret
-      "Héphaistos cachait ses forges dans les entrailles de la terre. Un lieu secret vous attend.",
-      "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
-      "Même les héros ont soif entre deux épreuves. Cherchez la taverne du village, là où les mortels se retrouvent.",
-      "Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
+    grec: [  // → Secret (Chez Laffy)
+      "Hermès y passe, car c'est là que les nouvelles voyagent et que les destins se croisent.",
+      "Je sers à boire, à parler, et parfois à refaire le monde.",
+      "Là où les habitants d'Orschwihr se retrouvent depuis toujours. Je peux aussi être servi court ou long.",
+      "Le café Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
     ],
     nordique: [  // → Base (DERNIER CP)
       "Comme Sigurd de retour de sa quête, votre saga s'achève. Retournez au point de départ.",
@@ -218,7 +218,7 @@ const HINTS = {
       "Dionysos foulait les raisins sous ses pieds nus. Ici, des vignerons alsaciens ont pris le relais.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
-      "La cave viticole — [À préciser après repérage]."
+      "Le Domaine Albrecht — 28 Rue du Printemps, Orschwihr."
     ]
   },
 
@@ -236,17 +236,17 @@ const HINTS = {
       "Un édifice de pierre consacré à Notre-Dame — son nom évoque l'élévation vers le ciel.",
       "L'Église Notre-Dame de l'Assomption — Rue de l'Église."
     ],
-    hindou: [  // → Secret
-      "Même les dieux d'Asgard avaient leurs sanctuaires cachés. Ce lieu n'est pas sur toutes les cartes.",
-      "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
-      "L'ashram des mortels ordinaires : le café du village, où l'on refait le monde autour d'un verre.",
-      "Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
+    hindou: [  // → Secret (Chez Laffy)
+      "Au terme du yatra, les pèlerins s'arrêtent dans une dhaba pour souffler et échanger.",
+      "Je sers à boire, à parler, et parfois à refaire le monde.",
+      "Là où les habitants d'Orschwihr se retrouvent depuis toujours. Je peux aussi être servi court ou long.",
+      "Le café Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
     ],
-    egyptien: [  // → Secret
-      "Comme Anubis gardait les secrets des morts, ce lieu garde un secret bien vivant.",
-      "Je ne me livre pas facilement. Regardez autour de vous, les indices du lieu parleront d'eux-mêmes.",
-      "Là où les habitants d'Orschwihr se retrouvent pour boire et parler. Le café du village vous attend.",
-      "Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
+    egyptien: [  // → Secret (Chez Laffy)
+      "Hathor, déesse de la joie et du grain, avait ses sanctuaires dans chaque ville d'Égypte.",
+      "Je sers à boire, à parler, et parfois à refaire le monde.",
+      "Là où les habitants d'Orschwihr se retrouvent depuis toujours. Je peux aussi être servi court ou long.",
+      "Le café Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
     ]
   }
 };
@@ -260,10 +260,10 @@ const LVL = [
 
 const ACC = {
   eglise:   ["eglise","église","notre-dame","notre dame","l'église","l'eglise","assomption"],
-  fontaine: ["fontaine","la fontaine","fontaine historique"],
+  fontaine: ["fontaine","la fontaine","fontaine historique","pressoir","le pressoir"],
   mairie:   ["mairie","la mairie","soultzmatt"],
-  cave:     ["cave","la cave","vigne","vignoble","cave viticole"],
-  secret:   ["secret","5e lieu","cinquieme lieu","cinquième lieu"],
+  cave:     ["cave","la cave","vigne","vignoble","cave viticole","albrecht","domaine albrecht"],
+  secret:   ["secret","5e lieu","cinquieme lieu","cinquième lieu","cafe","café","laffy","chez laffy","bar"],
   ferme:    ["ferme","gite","gîte","depart","départ","base","hébergement","hebergement"]
 };
 
