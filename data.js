@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.6.0';
+const APP_VERSION = '1.7.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -68,7 +68,7 @@ const CPS = {
   mairie:   {name:"La Mairie",              icon:"./cp-mairie.webp",   addr:"11 rue de Soultzmatt, Orschwihr",    code:"LOIS"},
   cave:     {name:"Le Domaine Albrecht",     icon:"./cp-cave.webp",     addr:"28 Rue du Printemps, Orschwihr",     code:"VINS"},
   secret:   {name:"Chez Laffy",             icon:"./cp-secret.webp",   addr:"Rue de Bergholtz-Zell, Orschwihr",   code:"CAFE"},
-  ferme:    {name:"Votre point de départ",  icon:"",                   addr:"29 Grand Rue, Orschwihr, Grand Est 68500, France",      code:"FINI"}
+  ferme:    {name:"Notre Airbnb",            icon:"",                   addr:"29 Grand Rue, Orschwihr, Grand Est 68500, France",      code:"FINI"}
 };
 
 // ─────────────────────────────────────────────────────────────────
@@ -127,8 +127,8 @@ const HINTS = {
     hindou: [  // → Base (DERNIER CP)
       "Votre yatra touche à sa fin. Retournez au point de départ — là où votre odyssée alsacienne a commencé.",
       "Le chemin du retour est le même que celui du départ.",
-      "Retournez à votre hébergement.",
-      "Votre point de départ — 29 Grand Rue, Orschwihr."
+      "Retournez au logement.",
+      "Notre Airbnb — 29 Grand Rue, Orschwihr."
     ],
     egyptien: [  // → Mairie (DERNIER CP)
       "Comme le pharaon régnant depuis son palais, un seul bâtiment administre les destins du village.",
@@ -161,8 +161,8 @@ const HINTS = {
     egyptien: [  // → Base (DERNIER CP)
       "Comme le soleil de Rà touchant l'horizon, votre odyssée alsacienne s'achève. Retournez au point de départ.",
       "Le chemin du retour est le même que celui du départ.",
-      "Retournez à votre hébergement.",
-      "Votre point de départ — 29 Grand Rue, Orschwihr."
+      "Retournez au logement.",
+      "Notre Airbnb — 29 Grand Rue, Orschwihr."
     ]
   },
 
@@ -177,8 +177,8 @@ const HINTS = {
     nordique: [  // → Base (DERNIER CP)
       "Comme Sigurd de retour de sa quête, votre saga s'achève. Retournez au point de départ.",
       "Le chemin du retour est le même que celui du départ.",
-      "Retournez à votre hébergement.",
-      "Votre point de départ — 29 Grand Rue, Orschwihr."
+      "Retournez au logement.",
+      "Notre Airbnb — 29 Grand Rue, Orschwihr."
     ],
     hindou: [  // → Pressoir
       "Les dieux enroulèrent Vasuki autour de Mandara pour faire tourner l'océan et en extraire l'amrita. Cherchez à Orschwihr ce qui pratique le même art.",
@@ -227,8 +227,8 @@ const HINTS = {
     grec: [  // → Base (DERNIER CP)
       "Comme Ulysse apercevant Ithaque, votre odyssée alsacienne s'achève. Retournez au point de départ.",
       "Le chemin du retour est le même que celui du départ.",
-      "Retournez à votre hébergement.",
-      "Votre point de départ — 29 Grand Rue, Orschwihr."
+      "Retournez au logement.",
+      "Notre Airbnb — 29 Grand Rue, Orschwihr."
     ],
     nordique: [  // → Église
       "Le temple d'Ásgarðr n'a qu'un héritier à Midgard — un lieu où un seul dieu règne.",
