@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.16.0';
+const APP_VERSION = '1.17.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -63,7 +63,7 @@ const ENIGMES = {
 };
 
 const CPS = {
-  eglise:   {name:"L'Église Notre-Dame",       icon:"./cp-eglise.webp",   addr:"Rue de l'Église, Orschwihr",         code:"DAME"},
+  eglise:   {name:"L'Église",                  icon:"./cp-eglise.webp",   addr:"Rue de l'Église, Orschwihr",         code:"DAME"},
   fontaine: {name:"Le Pressoir",               icon:"./cp-fontaine.webp", addr:"26 Rue de Soultzmatt, Orschwihr",    code:"ONDE"},
   mairie:   {name:"La Mairie",                 icon:"./cp-mairie.webp",   addr:"11 rue de Soultzmatt, Orschwihr",    code:"LOIS"},
   cave:     {name:"Le Domaine Albrecht Lucien", icon:"./cp-cave.webp",    addr:"28 Rue du Printemps, Orschwihr",     code:"VINS"},
@@ -87,8 +87,8 @@ const HINTS = {
     grec: [  // Airbnb → Église
       "Chaque polis avait son temenos. Dans le village, cherchez l'héritier du monde qu'Olympe a engendré.",
       "On ne m'habite pas, mais on vient me voir pour être habité. J'abrite sans loger et j'élève sans enfanter.",
-      "Un édifice de pierre dont le saint a donné son nom à des milliers d'enfants. L'Assomption la consacre.",
-      "L'Église Notre-Dame de l'Assomption — Rue de l'Église."
+      "Un édifice de pierre, où on y mange de bons osties.",
+      "L'Église."
     ],
     nordique: [  // Airbnb → Mairie
       "Odin lisait les runes du destin, mais le destin des hommes de Midgard s'écrit sans divinité.",
@@ -155,8 +155,8 @@ const HINTS = {
     hindou: [  // → Église (DERNIER CP)
       "Aucun Brahmane n'y porte le feu d'Agni, car un seul homme a verticalisé son karma.",
       "On ne m'habite pas, mais on vient me voir pour être habité. J'abrite sans loger et j'élève sans enfanter.",
-      "Un édifice de pierre consacré à Notre-Dame — son nom évoque l'élévation vers le ciel.",
-      "L'Église Notre-Dame de l'Assomption — Rue de l'Église."
+      "Un édifice de pierre, où on y mange de bons osties.",
+      "L'Église."
     ],
     egyptien: [  // → Airbnb (DERNIER CP)
       "Comme le soleil de Rà touchant l'horizon, votre odyssée alsacienne s'achève. Retournez au point de départ.",
@@ -189,8 +189,8 @@ const HINTS = {
     egyptien: [  // → Église
       "Amon-Rà résidait dans son naos, inaccessible aux profanes. À Orschwihr, un bâtiment élève encore les hommes vers ce qui les dépasse.",
       "On ne m'habite pas, mais on vient me voir pour être habité. J'abrite sans loger et j'élève sans enfanter.",
-      "Un édifice de pierre consacré à Notre-Dame — son nom évoque l'élévation vers le ciel.",
-      "L'Église Notre-Dame de l'Assomption — Rue de l'Église."
+      "Un édifice de pierre, où on y mange de bons osties.",
+      "L'Église."
     ]
   },
 
@@ -233,8 +233,8 @@ const HINTS = {
     nordique: [  // → Église
       "Le temple d'Ásgarðr n'a qu'un héritier à Midgard — un lieu où un seul dieu règne.",
       "On ne m'habite pas, mais on vient me voir pour être habité. J'abrite sans loger et j'élève sans enfanter.",
-      "Un édifice de pierre consacré à Notre-Dame — son nom évoque l'élévation vers le ciel.",
-      "L'Église Notre-Dame de l'Assomption — Rue de l'Église."
+      "Un édifice de pierre, où on y mange de bons osties.",
+      "L'Église."
     ],
     hindou: [  // → Café (Chez Laffy)
       "Au terme du yatra, les pèlerins s'arrêtent dans une dhaba pour souffler et échanger.",
@@ -259,7 +259,7 @@ const LVL = [
 ];
 
 const ACC = {
-  eglise:   ["eglise","église","notre-dame","notre dame","l'église","l'eglise","assomption"],
+  eglise:   ["eglise","église","l'église","l'eglise","l' église","l' eglise"],
   fontaine: ["fontaine","la fontaine","fontaine historique","pressoir","le pressoir"],
   mairie:   ["mairie","la mairie","soultzmatt"],
   cave:     ["cave","la cave","vigne","vignoble","cave viticole","albrecht","domaine albrecht","albrecht lucien"],
