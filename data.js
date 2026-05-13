@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.13.0';
+const APP_VERSION = '1.14.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -17,7 +17,7 @@ const TEAMS = {
     arrival:"Comme Ulysse retrouvant Ithaque après vingt ans d'errance, votre odyssée s'achève ici.",
     members:["Louis","Quentin","François"],
     color:"#5a8fd4", colorLight:"#2a5a9a", bg:"rgba(90,143,212,0.12)", border:"rgba(90,143,212,0.32)",
-    route:["eglise","mairie","cave","secret","fontaine"],
+    route:["eglise","mairie","cave","cafe","fontaine"],
     emblem:'./emblem-grec.webp',
     bgTexture:'./bg-grec.webp'
   },
@@ -27,7 +27,7 @@ const TEAMS = {
     arrival:"Comme Sigurd de retour de sa quête, vos exploits seront chantés au mead-hall ce soir.",
     members:["Luc","Julien","Louis Stephan"],
     color:"#c8c8c8", colorLight:"#5a5a5a", bg:"rgba(160,160,160,0.10)", border:"rgba(160,160,160,0.28)",
-    route:["mairie","secret","fontaine","eglise","cave"],
+    route:["mairie","cafe","fontaine","eglise","cave"],
     emblem:'./emblem-nordique.webp',
     bgTexture:'./bg-nordique.webp'
   },
@@ -37,7 +37,7 @@ const TEAMS = {
     arrival:"Votre yatra s'achève. Le moksha vous attend — repos mérité après ce périple.",
     members:["Léo","Clément","Antoine"],
     color:"#c080e8", colorLight:"#7a3aa0", bg:"rgba(160,80,200,0.12)", border:"rgba(160,80,200,0.32)",
-    route:["cave","fontaine","secret","mairie","eglise"],
+    route:["cave","fontaine","cafe","mairie","eglise"],
     emblem:'./emblem-hindou.webp',
     bgTexture:'./bg-hindou.webp'
   },
@@ -47,7 +47,7 @@ const TEAMS = {
     arrival:"Comme le soleil de Rà touchant l'horizon, votre odyssée alsacienne s'achève en gloire.",
     members:["Lucas","Lucie","Antoine"],
     color:"#d4a02a", colorLight:"#9a7010", bg:"rgba(212,160,42,0.12)", border:"rgba(212,160,42,0.32)",
-    route:["fontaine","secret","cave","eglise","mairie"],
+    route:["fontaine","cafe","cave","eglise","mairie"],
     emblem:'./emblem-egyptien.webp',
     bgTexture:'./bg-egyptien.webp'
   }
@@ -58,51 +58,51 @@ const ENIGMES = {
   fontaine: "[PLACEHOLDER — à remplir après repérage]",
   mairie:   "[PLACEHOLDER — à remplir après repérage]",
   cave:     "[PLACEHOLDER — à remplir après repérage]",
-  secret:   "[PLACEHOLDER — à remplir après repérage]",
+  cafe:     "[PLACEHOLDER — à remplir après repérage]",
   ferme:    "[PLACEHOLDER]"
 };
 
 const CPS = {
-  eglise:   {name:"L'Église Notre-Dame",    icon:"./cp-eglise.webp",   addr:"Rue de l'Église, Orschwihr",         code:"DAME"},
-  fontaine: {name:"Le Pressoir",            icon:"./cp-fontaine.webp", addr:"26 Rue de Soultzmatt, Orschwihr",    code:"ONDE"},
-  mairie:   {name:"La Mairie",              icon:"./cp-mairie.webp",   addr:"11 rue de Soultzmatt, Orschwihr",    code:"LOIS"},
-  cave:     {name:"Le Domaine Albrecht Lucien", icon:"./cp-cave.webp",   addr:"28 Rue du Printemps, Orschwihr",     code:"VINS"},
-  secret:   {name:"Chez Laffy",             icon:"./cp-secret.webp",   addr:"Rue de Bergholtz-Zell, Orschwihr",   code:"CAFE"},
-  ferme:    {name:"Notre Airbnb",            icon:"",                   addr:"29 Grand Rue, Orschwihr, Grand Est 68500, France",      code:"FINI"}
+  eglise:   {name:"L'Église Notre-Dame",       icon:"./cp-eglise.webp",   addr:"Rue de l'Église, Orschwihr",         code:"DAME"},
+  fontaine: {name:"Le Pressoir",               icon:"./cp-fontaine.webp", addr:"26 Rue de Soultzmatt, Orschwihr",    code:"ONDE"},
+  mairie:   {name:"La Mairie",                 icon:"./cp-mairie.webp",   addr:"11 rue de Soultzmatt, Orschwihr",    code:"LOIS"},
+  cave:     {name:"Le Domaine Albrecht Lucien", icon:"./cp-cave.webp",    addr:"28 Rue du Printemps, Orschwihr",     code:"VINS"},
+  cafe:     {name:"Chez Laffy",                icon:"./cp-secret.webp",   addr:"Rue de Bergholtz-Zell, Orschwihr",   code:"CAFE"},
+  ferme:    {name:"Notre Airbnb",              icon:"",                   addr:"29 Grand Rue, Orschwihr, Grand Est 68500, France", code:"FINI"}
 };
 
 // ─────────────────────────────────────────────────────────────────
 // HINTS : clé = CP venant d'être validé → indices vers le SUIVANT
 //
 // Routes (5 CP chacune) :
-//   Grec     : Base → Église → Mairie → Albrecht → Laffy → Pressoir → Base
-//   Nordique : Base → Mairie → Laffy → Pressoir → Église → Albrecht → Base
-//   Hindou   : Base → Albrecht → Pressoir → Laffy → Mairie → Église → Base
-//   Égyptien : Base → Pressoir → Laffy → Albrecht → Église → Mairie → Base
+//   Grec     : Airbnb → Église → Mairie → Albrecht → Laffy → Pressoir → Airbnb
+//   Nordique : Airbnb → Mairie → Laffy → Pressoir → Église → Albrecht → Airbnb
+//   Hindou   : Airbnb → Albrecht → Pressoir → Laffy → Mairie → Église → Airbnb
+//   Égyptien : Airbnb → Pressoir → Laffy → Albrecht → Église → Mairie → Airbnb
 // ─────────────────────────────────────────────────────────────────
 const HINTS = {
 
-  // ── FERME/BASE → 1er checkpoint de chaque équipe ─────────────
+  // ── AIRBNB/BASE → 1er checkpoint de chaque équipe ────────────
   ferme: {
-    grec: [  // Base → Église
+    grec: [  // Airbnb → Église
       "Chaque polis avait son temenos. Dans le village, cherchez l'héritier du monde qu'Olympe a engendré.",
       "On ne m'habite pas, mais on vient me voir pour être habité. J'abrite sans loger et j'élève sans enfanter.",
       "Un édifice de pierre dont le saint a donné son nom à des milliers d'enfants. L'Assomption la consacre.",
       "L'Église Notre-Dame de l'Assomption — Rue de l'Église."
     ],
-    nordique: [  // Base → Mairie
-      "Odin lisait les runes du destin, mais celui des hommes de Midgard s'écrit sans divinité.",
+    nordique: [  // Airbnb → Mairie
+      "Odin lisait les runes du destin, mais le destin des hommes de Midgard s'écrit sans divinité.",
       "Je garde moins de secrets que de preuves, et bien des instants décisifs passent par moi.",
       "Les décrets s'affichent sur ce bâtiment que chaque commune possède.",
       "La Mairie — 11 rue de Soultzmatt."
     ],
-    hindou: [  // Base → Cave
+    hindou: [  // Airbnb → Cave
       "Dionysos lui-même y viendrait en pèlerinage. Ce lieu garde le fruit de la vigne et le labeur des hommes.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village produit les grands crus d'Alsace — cherchez l'entrée de leur cave.",
       "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
     ],
-    egyptien: [  // Base → Pressoir
+    egyptien: [  // Airbnb → Pressoir
       "Les anneaux d'Apep serrent pour détruire. Ici, les anneaux serrent pour créer.",
       "Je ne suis ni puits ni source. La vis est mon bras, le plateau est ma paume. J'écrase pour libérer.",
       "L'outil en bois ancestral du vigneron, là où le raisin devient jus avant de devenir vin.",
@@ -119,12 +119,12 @@ const HINTS = {
       "La Mairie — 11 rue de Soultzmatt."
     ],
     nordique: [  // → Cave (DERNIER CP)
-      "Comme Sigurd de retour de sa quête, votre saga approche de son terme. Un dernier secret vous attend.",
+      "Comme Sigurd de retour de sa quête, votre saga approche de son terme. Une dernière étape vous attend.",
       "Dionysos lui-même y viendrait en pèlerinage. Ce lieu garde le fruit de la vigne.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
       "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
     ],
-    hindou: [  // → Base (DERNIER CP)
+    hindou: [  // → Airbnb (DERNIER CP)
       "Votre yatra touche à sa fin. Retournez au point de départ — là où votre odyssée alsacienne a commencé.",
       "Le chemin du retour est le même que celui du départ.",
       "Retournez au logement.",
@@ -146,7 +146,7 @@ const HINTS = {
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
       "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
     ],
-    nordique: [  // → Secret (Chez Laffy)
+    nordique: [  // → Café (Chez Laffy)
       "Heorot n'était ni temple ni forteresse. L'endroit où les guerriers posaient leurs armes et s'asseyaient ensemble.",
       "Je sers à boire, à parler, et parfois à refaire le monde.",
       "Là où les habitants d'Orschwihr se retrouvent depuis toujours. Je peux aussi être servi court ou long.",
@@ -158,7 +158,7 @@ const HINTS = {
       "Un édifice de pierre consacré à Notre-Dame — son nom évoque l'élévation vers le ciel.",
       "L'Église Notre-Dame de l'Assomption — Rue de l'Église."
     ],
-    egyptien: [  // → Base (DERNIER CP)
+    egyptien: [  // → Airbnb (DERNIER CP)
       "Comme le soleil de Rà touchant l'horizon, votre odyssée alsacienne s'achève. Retournez au point de départ.",
       "Le chemin du retour est le même que celui du départ.",
       "Retournez au logement.",
@@ -168,13 +168,13 @@ const HINTS = {
 
   // ── CAVE → prochaine étape ────────────────────────────────────
   cave: {
-    grec: [  // → Secret (Chez Laffy)
+    grec: [  // → Café (Chez Laffy)
       "Hermès y passe, car c'est là que les nouvelles voyagent et que les destins se croisent.",
       "Je sers à boire, à parler, et parfois à refaire le monde.",
       "Là où les habitants d'Orschwihr se retrouvent depuis toujours. Je peux aussi être servi court ou long.",
       "Le café Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
     ],
-    nordique: [  // → Base (DERNIER CP)
+    nordique: [  // → Airbnb (DERNIER CP)
       "Comme Sigurd de retour de sa quête, votre saga s'achève. Retournez au point de départ.",
       "Le chemin du retour est le même que celui du départ.",
       "Retournez au logement.",
@@ -194,8 +194,8 @@ const HINTS = {
     ]
   },
 
-  // ── SECRET → prochaine étape ──────────────────────────────────
-  secret: {
+  // ── CAFÉ → prochaine étape ────────────────────────────────────
+  cafe: {
     grec: [  // → Pressoir
       "Ananke enserre l'œuf du monde dans ses anneaux. Dans ce village, son héritier pratique la même étreinte.",
       "Je ne suis ni puits ni source. La vis est mon bras, le plateau est ma paume. J'écrase pour libérer.",
@@ -224,7 +224,7 @@ const HINTS = {
 
   // ── FONTAINE → prochaine étape ────────────────────────────────
   fontaine: {
-    grec: [  // → Base (DERNIER CP)
+    grec: [  // → Airbnb (DERNIER CP)
       "Comme Ulysse apercevant Ithaque, votre odyssée alsacienne s'achève. Retournez au point de départ.",
       "Le chemin du retour est le même que celui du départ.",
       "Retournez au logement.",
@@ -236,13 +236,13 @@ const HINTS = {
       "Un édifice de pierre consacré à Notre-Dame — son nom évoque l'élévation vers le ciel.",
       "L'Église Notre-Dame de l'Assomption — Rue de l'Église."
     ],
-    hindou: [  // → Secret (Chez Laffy)
+    hindou: [  // → Café (Chez Laffy)
       "Au terme du yatra, les pèlerins s'arrêtent dans une dhaba pour souffler et échanger.",
       "Je sers à boire, à parler, et parfois à refaire le monde.",
       "Là où les habitants d'Orschwihr se retrouvent depuis toujours. Je peux aussi être servi court ou long.",
       "Le café Chez Laffy — Rue de Bergholtz-Zell, Orschwihr."
     ],
-    egyptien: [  // → Secret (Chez Laffy)
+    egyptien: [  // → Café (Chez Laffy)
       "Hathor, déesse de la joie et du grain, avait ses sanctuaires dans chaque ville d'Égypte.",
       "Je sers à boire, à parler, et parfois à refaire le monde.",
       "Là où les habitants d'Orschwihr se retrouvent depuis toujours. Je peux aussi être servi court ou long.",
@@ -263,8 +263,8 @@ const ACC = {
   fontaine: ["fontaine","la fontaine","fontaine historique","pressoir","le pressoir"],
   mairie:   ["mairie","la mairie","soultzmatt"],
   cave:     ["cave","la cave","vigne","vignoble","cave viticole","albrecht","domaine albrecht","albrecht lucien"],
-  secret:   ["secret","5e lieu","cinquieme lieu","cinquième lieu","cafe","café","laffy","chez laffy","bar"],
-  ferme:    ["ferme","gite","gîte","depart","départ","base","hébergement","hebergement"]
+  cafe:     ["cafe","café","laffy","chez laffy","bar","5e lieu","cinquieme lieu","cinquième lieu"],
+  ferme:    ["ferme","gite","gîte","depart","départ","base","hébergement","hebergement","airbnb"]
 };
 
 const CITS = {
