@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.17.0';
+const APP_VERSION = '1.18.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -119,8 +119,8 @@ const HINTS = {
       "La Mairie — 11 rue de Soultzmatt."
     ],
     nordique: [  // → Cave (DERNIER CP)
-      "Comme Sigurd de retour de sa quête, votre saga approche de son terme. Une dernière étape vous attend.",
-      "Les Ases brassaient leur hydromel à Ásgarðr. Ce lieu garde les mêmes secrets.",
+      "Comme Sigurd au terme de sa quête, un dernier trésor vous attend là où est caché le nectar.",
+      "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
       "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
     ],
@@ -141,7 +141,7 @@ const HINTS = {
   // ── MAIRIE → prochaine étape ──────────────────────────────────
   mairie: {
     grec: [  // → Cave
-      "Dionysos foulait les raisins sous ses pieds nus. Ici, des vignerons alsaciens ont pris le relais.",
+      "Dionysos foulait les raisins sous ses pieds nus.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village — cherchez l'entrée de leur cave.",
       "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
@@ -222,7 +222,7 @@ const HINTS = {
     ]
   },
 
-  // ── FONTAINE → prochaine étape ────────────────────────────────
+  // ── PRESSOIR → prochaine étape ────────────────────────────────
   fontaine: {
     grec: [  // → Airbnb (DERNIER CP)
       "Comme Ulysse apercevant Ithaque, votre odyssée alsacienne s'achève. Retournez au point de départ.",
@@ -260,8 +260,8 @@ const LVL = [
 
 const ACC = {
   eglise:   ["eglise","église","l'église","l'eglise","l' église","l' eglise"],
-  fontaine: ["fontaine","la fontaine","fontaine historique","pressoir","le pressoir"],
-  mairie:   ["mairie","la mairie","soultzmatt"],
+  fontaine: ["pressoir","le pressoir"],
+  mairie:   ["mairie","la mairie","soultzmatt","hotel de ville","hôtel de ville"],
   cave:     ["cave","la cave","vigne","vignoble","cave viticole","albrecht","domaine albrecht","albrecht lucien"],
   cafe:     ["cafe","café","laffy","chez laffy","bar","5e lieu","cinquieme lieu","cinquième lieu"],
   ferme:    ["gite","gîte","depart","départ","base","hébergement","hebergement","airbnb","logement","notre airbnb"]

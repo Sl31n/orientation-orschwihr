@@ -3,68 +3,58 @@
 ## Contexte
 EVG (enterrement de vie de garçon) le **23 mai 2026** à **Orschwihr, Alsace (68500)**.
 Thème : **Mythologies**. Jeu de l'après-midi : course d'orientation dans le village.
-**4 équipes de 3 joueurs** (12 participants) + 1 Game Master (toi).
+**4 équipes de 3 joueurs** (12 participants) + 1 Game Master (Niels).
 
-Ce projet est un fork de l'app "Mythologies" créée par Hugo (hugohcl) pour un événement similaire à Dosches en 2025. Toute la mécanique de jeu est identique — seules les données (équipes, checkpoints, indices) sont à adapter.
+Projet forké de l'app de Hugo (hugohcl) — mécanique de jeu identique, données entièrement adaptées.
 
-## Fichier principal
+## Fichiers principaux
 `index.html` + `data.js` + `game.js` + `sw.js` — PWA mobile, fonctionne hors-ligne.
 
 ## Équipes
 | Équipe | Membres | Couleur | Route |
 |--------|---------|---------|-------|
-| Grecque | À compléter | #5a8fd4 | eglise → mairie → cave → secret → fontaine |
-| Nordique | À compléter | #c8c8c8 | mairie → secret → fontaine → eglise → cave |
-| Hindoue | À compléter | #c080e8 | cave → fontaine → secret → mairie → eglise |
-| Égyptienne | À compléter | #d4a02a | fontaine → secret → cave → eglise → mairie |
+| Grecque | Louis, Quentin, François | #5a8fd4 | eglise → mairie → cave → cafe → fontaine |
+| Nordique | Luc, Julien, Louis Stephan | #c8c8c8 | mairie → cafe → fontaine → eglise → cave |
+| Hindoue | Léo, Clément, Antoine | #c080e8 | cave → fontaine → cafe → mairie → eglise |
+| Égyptienne | Lucas, Lucie, Antoine | #d4a02a | fontaine → cafe → cave → eglise → mairie |
 
-Toutes les équipes partent et arrivent au **point de départ (hébergement/gîte)**.
+Toutes les équipes partent et arrivent à **Notre Airbnb** (29 Grand Rue).
 
 ## Checkpoints
-| ID | Nom | Adresse | Code cachette |
-|----|-----|---------|---------------|
-| eglise | Église Notre-Dame de l'Assomption | Rue de l'Église | DAME |
-| fontaine | La Fontaine Historique (classée MH) | Rue de l'Église | ONDE |
+| ID | Nom affiché | Adresse | Code |
+|----|-------------|---------|------|
+| eglise | L'Église | Rue de l'Église | DAME |
+| fontaine | Le Pressoir | 26 Rue de Soultzmatt | ONDE |
 | mairie | La Mairie | 11 rue de Soultzmatt | LOIS |
-| cave | Cave viticole (à confirmer) | À compléter | VINS |
-| secret | 5e lieu (à trouver sur place) | À compléter | ???? |
-| ferme | Point de départ (gîte) | À compléter | FINI |
+| cave | Le Domaine Albrecht Lucien | 28 Rue du Printemps | VINS |
+| cafe | Chez Laffy | Rue de Bergholtz-Zell | CAFE |
+| ferme | Notre Airbnb | 29 Grand Rue | FINI |
 
-## Ce qui reste à faire (avant le 23 mai)
+**Note** : `fontaine` est conservé comme clé JS interne pour des raisons de compat — l'affichage joueur dit "Le Pressoir" partout. `ferme` idem : clé interne, affichage "Notre Airbnb".
 
-### Après repérage sur place (OBLIGATOIRE)
-- [ ] Remplir `data.js` → `ENIGMES` : les vraies énigmes de localisation cachette pour chaque CP
-- [ ] Remplir `data.js` → `CPS[cave].addr` et `CPS[secret].addr` : adresses réelles
-- [ ] Remplir `data.js` → `CPS[secret].code` : remplacer `????` par le vrai code 4 lettres
-- [ ] Remplir les indices HINTS pour `cave` et `secret` (les `[À remplir après repérage]`)
-- [ ] Remplir l'adresse du gîte dans tous les indices "retour à la base" et dans `CPS[ferme].addr`
-- [ ] Changer le `MJ_CODE` dans `data.js` (remplacer `"ZEUS"` par quelque chose que seul le MJ connaît)
+## MJ_CODE
+`ZEUS` — confirmé définitif.
 
-### Prénoms des joueurs
-- [ ] Remplacer `"Joueur 1"` à `"Joueur 12"` dans `data.js` → `TEAMS[...].members`
+## Ce qui reste avant le 23 mai
 
-### Assets visuels (optionnel mais recommandé)
-- [ ] `Carte.png` : carte du village Orschwihr (screenshot Google Maps ou plan)
-- [ ] `cp-eglise.webp`, `cp-fontaine.webp`, `cp-mairie.webp`, `cp-cave.webp`, `cp-secret.webp` : photos des cachettes (prises lors du repérage)
-- [ ] `emblem-egyptien.webp` : emblème pour la 4e équipe (les 3 autres sont déjà dans le repo source)
-- [ ] `bg-egyptien.webp` : texture de fond pour l'équipe égyptienne
-- [ ] `logo.png` : logo de l'app (peut rester le même)
-
-### Pour ajouter une photo de cachette
-Les photos s'affichent sur l'écran énigme. Dans `data.js`, le champ `icon` de chaque CP pointe vers le fichier image.
+### Après repérage (OBLIGATOIRE)
+- [ ] Remplir `data.js` → `ENIGMES` : énigmes pour trouver la cachette physique à chaque CP
+- [ ] Prendre les photos des cachettes lors du repérage
+- [ ] Remplacer `cp-eglise.webp`, `cp-fontaine.webp`, `cp-mairie.webp`, `cp-cave.webp`, `cp-secret.webp` par les vraies photos
+- [ ] Mettre à jour `PHOTO_HINTS` dans `game.js` (référence encore les CPs de Hugo)
 
 ## Architecture du fichier index.html
 Screens (divs avec class `screen hidden`) :
 - `s1` — Sélection équipe
-- `s2` — Vérification mode avion (obligatoire)
+- `s2` — Vérification mode avion
 - `s3` — Briefing équipe
 - `s4` — Countdown 3-2-1
 - `s5` — Indices départ
 - `s6` — En route (chrono visible)
-- `sEnigme` — Énigme pour trouver la cachette physique
+- `sEnigme` — Énigme cachette
 - `s7` — Saisie code 4 lettres
 - `s8` — Indices vers prochaine destination
-- `sFinal` — Dernier défi physique à la base
+- `sFinal` — Défi final à l'Airbnb
 - `s9` — Arrivée + score
 - `sSplash` — Splash screen
 - `s10` — MJ Login
@@ -72,85 +62,44 @@ Screens (divs avec class `screen hidden`) :
 - `sTest` — Mode Test
 
 ## Mécanique de jeu (ne pas modifier)
-1. Toutes les équipes démarrent au gîte — reçoivent leur 1er indice sur place
-2. À chaque checkpoint : énigme → cachette physique → code 4 lettres → débloque indices suivants
-3. 4 niveaux d'indices : I gratuit / II +3min / III +6min / IV +10min
+1. Toutes les équipes démarrent à l'Airbnb — reçoivent leur 1er indice sur place
+2. À chaque CP : énigme → cachette physique → code 4 lettres → débloque indices suivants
+3. 4 niveaux d'indices : I gratuit / II +3min / III +6min / IV +10min (adresse complète)
 4. Mauvaise destination tapée = +1 min de pénalité
 5. Connexion internet détectée = +30 min de pénalité
-6. Carte consultable 2 fois max (+10 sec par consultation)
-7. Retour au gîte → dernier jeu physique → MJ donne le code FINI → chrono s'arrête
+6. Carte consultable 2 fois max, 12 sec par consultation (+12 sec par usage)
+7. Retour à l'Airbnb → dernier jeu physique → MJ donne le code FINI → chrono s'arrête
 8. Score = chrono + pénalités
 
 ## Variables JS clés dans data.js
 ```js
-MJ_CODE        // Code secret du Game Master
-EVENT_DATE     // Affiché dans l'app
-EVENT_LOCATION // Affiché dans l'app
+MJ_CODE        // Code secret du Game Master (ZEUS)
+EVENT_DATE     // 23 mai 2026
+EVENT_LOCATION // Orschwihr
 TEAMS          // Équipes : membres, couleurs, routes, emblèmes
 CPS            // Checkpoints : nom, photo, adresse, code cachette
 ENIGMES        // Texte de l'énigme pour trouver la cachette physique
-HINTS          // Indices par checkpoint et par équipe (4 niveaux)
+HINTS          // 4 niveaux d'indices par (CP venant d'être validé, équipe)
 ACC            // Alias acceptés pour la saisie de destination
 ```
 
-## Règles de travail importantes (apprises sur le projet source)
+## Règles de travail importantes
 
-**Ne JAMAIS réécrire index.html ou game.js from scratch** — patcher avec des éditions ciblées uniquement. La réécriture introduit des régressions.
+**Ne JAMAIS réécrire index.html ou game.js from scratch** — patcher avec des éditions ciblées uniquement.
 
-**Valider avant de livrer :**
-1. `node --check data.js` pour vérifier la syntaxe JS
-2. Vérifier que tous les IDs de checkpoints dans les routes correspondent à des clés de `CPS` et `HINTS`
+**Bump systématique à chaque déploiement** :
+- `APP_VERSION` dans `data.js` (semver)
+- `CACHE` dans `sw.js` (incrément vN)
 
-**Ne jamais mettre d'`onclick` inline avec des quotes imbriquées dans du HTML généré par JS** — crash Safari silencieux. Toujours `createElement` + `addEventListener`.
+**Ne jamais mettre d'`onclick` inline avec quotes imbriquées dans du HTML généré par JS** — crash Safari silencieux.
 
-**`playBeep()` doit être appelé avant tout overlay ou transition** — contrainte AudioContext iOS.
-
-## GitHub Pages — Mise en ligne
-
-### Première fois (à faire une seule fois)
-
-**Étape 1 : Installer GitHub CLI**
-Demande à Claude Code de vérifier si `gh` est installé (`gh --version`). Sinon, télécharger sur https://cli.github.com et installer.
-
-**Étape 2 : Se connecter à GitHub**
-```
-gh auth login
-```
-Suivre les instructions interactives : choisir GitHub.com, HTTPS, et s'authentifier via le navigateur. Créer un compte GitHub si besoin sur https://github.com/join.
-
-**Étape 3 : Initialiser et publier le repo**
-Claude Code peut exécuter ces commandes à ta place :
-```bash
-git init
-git add .
-git commit -m "feat: initial EVG Orschwihr app"
-gh repo create orientation-orschwihr --public --source=. --remote=origin --push
-```
-
-**Étape 4 : Activer GitHub Pages**
-```
-gh api repos/TON_USERNAME/orientation-orschwihr/pages --method POST --field source='{"branch":"master","path":"/"}'
-```
-Ou manuellement : Settings → Pages → Branch: master → Save.
-
-L'app sera accessible sur : `https://TON_USERNAME.github.io/orientation-orschwihr/`
-
-### Pour chaque mise à jour ensuite
-```bash
-git add data.js   # (ou le fichier modifié)
-git commit -m "description du changement"
-git push
-```
-GitHub Pages se met à jour automatiquement en 1-2 minutes.
-
-### Forcer la mise à jour du cache sur les téléphones
-Chaque déploiement doit incrémenter le numéro de cache dans `sw.js` :
-```js
-var CACHE = 'orschwihr-v2';  // v1 → v2 → v3...
-```
-Et mettre à jour `APP_VERSION` dans `data.js`. Sinon les téléphones garderont l'ancienne version en cache.
+## GitHub Pages
+- Repo : https://github.com/Sl31n/orientation-orschwihr
+- Site : https://sl31n.github.io/orientation-orschwihr/
+- Local : /Users/nielskelche/orientation-orschwihr/
+- Déploiement auto via push sur master
 
 ## Notes spécifiques Orschwihr
-- La fontaine et l'église sont très proches (même rue). Les énigmes doivent être suffisamment distinctes pour éviter la confusion.
-- La cave et le 5e lieu (secret) sont à confirmer lors du repérage — vérifier que les deux sont accessibles à pied depuis le centre et à moins de 10 min de marche des autres CPs.
-- Le village fait ~1000 habitants : rester dans le centre historique pour ne pas allonger le parcours.
+- L'Église et le Pressoir sont sur la même rue (rue de Soultzmatt) — énigmes physiques distinctes obligatoires
+- Albrecht Lucien et Chez Laffy sont en périphérie (Rue du Printemps / Rue de Bergholtz-Zell)
+- Village ~1000 habitants, parcours dans le centre historique
