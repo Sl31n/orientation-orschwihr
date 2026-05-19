@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.18.0';
+const APP_VERSION = '1.19.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -97,7 +97,7 @@ const HINTS = {
       "La Mairie — 11 rue de Soultzmatt."
     ],
     hindou: [  // Airbnb → Cave
-      "Soma, nectar des dieux, coulait des hauteurs du ciel.",
+      "Soma, nectar des dieux, reposait dans des coupes scellées.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
       "Un domaine viticole du village produit les grands crus d'Alsace — cherchez l'entrée de leur cave.",
       "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
