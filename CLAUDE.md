@@ -26,7 +26,7 @@ Toutes les équipes partent et arrivent à **Notre Airbnb** (29 Grand Rue).
 | eglise | L'Église | Rue de l'Église | DAME |
 | fontaine | Le Pressoir | 26 Rue de Soultzmatt | ONDE |
 | mairie | La Mairie | 11 rue de Soultzmatt | LOIS |
-| cave | Le Domaine Albrecht Lucien | 28 Rue du Printemps | VINS |
+| cave | Lucien Albrecht / Wolfberger | 28 Rue du Printemps | VINS |
 | cafe | Chez Laffy | Rue de Bergholtz-Zell | CAFE |
 | ferme | Notre Airbnb | 29 Grand Rue | FINI |
 

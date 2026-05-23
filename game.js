@@ -1415,11 +1415,11 @@ var _photoUsed = {};
 
 // Placeholder photos par lieu (remplacer par les vrais fichiers plus tard)
 var PHOTO_HINTS = {
-  fresque: "./indice_fresque.jpeg",
-  eglise:  "./indice_eglise.jpeg",
-  lavoir:  "./indice_lavoir.jpeg",
-  salle:   "./indice_salle.jpeg",
-  mairie:  "./indice_mairie.jpeg"
+  eglise:   "./indice_eglise.jpeg",
+  mairie:   "./indice_mairie.jpeg",
+  fontaine: "./indice_pressoir.jpeg",
+  cave:     "./indice_cave.jpeg",
+  cafe:     "./indice_cafe.jpeg"
 };
 
 function showHelpDrawer(show) {
