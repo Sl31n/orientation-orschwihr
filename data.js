@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.20.0';
+const APP_VERSION = '1.21.0';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -54,11 +54,11 @@ const TEAMS = {
 };
 
 const ENIGMES = {
-  eglise:   "[PLACEHOLDER — à remplir après repérage]",
-  fontaine: "[PLACEHOLDER — à remplir après repérage]",
-  mairie:   "[PLACEHOLDER — à remplir après repérage]",
-  cave:     "[PLACEHOLDER — à remplir après repérage]",
-  cafe:     "[PLACEHOLDER — à remplir après repérage]",
+  eglise:   "Entre la jeunesse et la vieillesse je suis. Caché là où merulas viennent se restaurer.",
+  fontaine: "Depuis le pressoir, dirige-toi vers l'ouest vert et fais 54,5 pas pour trouver le code philosophal.",
+  mairie:   "Ici je m'informe sur l'actualité du village.",
+  cave:     "Arrivés sur le lieu, suivez votre instinct, faites comme les anciens.",
+  cafe:     "Je suis sous la terrasse du soleil. Sur la terrasse il fait chaud, donc je suis à l'ombre.",
   ferme:    "[PLACEHOLDER]"
 };
 
@@ -66,7 +66,7 @@ const CPS = {
   eglise:   {name:"L'Église",                  icon:"./cp-eglise.webp",   addr:"Rue de l'Église, Orschwihr",         code:"DAME"},
   fontaine: {name:"Le Pressoir",               icon:"./cp-fontaine.webp", addr:"26 Rue de Soultzmatt, Orschwihr",    code:"ONDE"},
   mairie:   {name:"La Mairie",                 icon:"./cp-mairie.webp",   addr:"11 rue de Soultzmatt, Orschwihr",    code:"LOIS"},
-  cave:     {name:"Le Domaine Albrecht Lucien", icon:"./cp-cave.webp",    addr:"28 Rue du Printemps, Orschwihr",     code:"VINS"},
+  cave:     {name:"Lucien Albrecht / Wolfberger", icon:"./cp-cave.webp",  addr:"28 Rue du Printemps, Orschwihr",     code:"VINS"},
   cafe:     {name:"Chez Laffy",                icon:"./cp-secret.webp",   addr:"Rue de Bergholtz-Zell, Orschwihr",   code:"CAFE"},
   ferme:    {name:"Notre Airbnb",              icon:"",                   addr:"29 Grand Rue, Orschwihr, Grand Est 68500, France", code:"FINI"}
 };
@@ -99,8 +99,8 @@ const HINTS = {
     hindou: [  // Airbnb → Cave
       "Soma, nectar des dieux, reposait dans des coupes scellées.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
-      "Un domaine viticole du village produit les grands crus d'Alsace — cherchez l'entrée de leur cave.",
-      "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
+      "Un domaine viticole du village porte deux noms. C'est lui.",
+      "Lucien Albrecht / Wolfberger — 28 Rue du Printemps, Orschwihr."
     ],
     egyptien: [  // Airbnb → Pressoir
       "Les anneaux d'Apep serrent pour détruire. Ici, les anneaux serrent pour créer.",
@@ -121,8 +121,8 @@ const HINTS = {
     nordique: [  // → Cave (DERNIER CP)
       "Comme Sigurd au terme de sa quête, un dernier trésor vous attend là où est caché le nectar.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
-      "Un domaine viticole du village — cherchez l'entrée de leur cave.",
-      "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
+      "Un domaine viticole du village porte deux noms. C'est lui.",
+      "Lucien Albrecht / Wolfberger — 28 Rue du Printemps, Orschwihr."
     ],
     hindou: [  // → Airbnb (DERNIER CP)
       "Votre yatra touche à sa fin. Retournez au point de départ — là où votre odyssée alsacienne a commencé.",
@@ -143,8 +143,8 @@ const HINTS = {
     grec: [  // → Cave
       "Dionysos foulait les raisins sous ses pieds nus.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
-      "Un domaine viticole du village — cherchez l'entrée de leur cave.",
-      "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
+      "Un domaine viticole du village porte deux noms. C'est lui.",
+      "Lucien Albrecht / Wolfberger — 28 Rue du Printemps, Orschwihr."
     ],
     nordique: [  // → Café (Chez Laffy)
       "Heorot n'était ni temple ni forteresse. L'endroit où les guerriers posaient leurs armes et s'asseyaient ensemble.",
@@ -217,8 +217,8 @@ const HINTS = {
     egyptien: [  // → Cave
       "L'héritage d'Osiris y perdure.",
       "Je repose sous la terre ou derrière une lourde porte. Les tonneaux sont mes gardiens.",
-      "Un domaine viticole du village — cherchez l'entrée de leur cave.",
-      "Le Domaine Albrecht Lucien — 28 Rue du Printemps, Orschwihr."
+      "Un domaine viticole du village porte deux noms. C'est lui.",
+      "Lucien Albrecht / Wolfberger — 28 Rue du Printemps, Orschwihr."
     ]
   },
 
@@ -262,7 +262,7 @@ const ACC = {
   eglise:   ["eglise","église","l'église","l'eglise","l' église","l' eglise"],
   fontaine: ["pressoir","le pressoir"],
   mairie:   ["mairie","la mairie","soultzmatt","hotel de ville","hôtel de ville"],
-  cave:     ["cave","la cave","vigne","vignoble","cave viticole","albrecht","domaine albrecht","albrecht lucien"],
+  cave:     ["cave","la cave","vigne","vignoble","cave viticole","albrecht","domaine albrecht","albrecht lucien","lucien albrecht","wolfberger"],
   cafe:     ["cafe","café","laffy","chez laffy","bar","5e lieu","cinquieme lieu","cinquième lieu"],
   ferme:    ["gite","gîte","depart","départ","base","hébergement","hebergement","airbnb","logement","notre airbnb"]
 };

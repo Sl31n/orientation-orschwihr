@@ -1251,7 +1251,7 @@ function renderMJTabs() {
     var cp=CPS[ck];
     var btn=document.createElement('button'); btn.className='mjtb'+(S.mjC===ck?' on':'');
     if(S.mjC===ck){btn.style.color='var(--gold)';btn.style.background='var(--gd)';btn.style.borderColor='var(--gb)';}
-    var label=cp.name.replace("L'Église",'Église').replace('La Mairie','Mairie').replace('Le Domaine Albrecht Lucien','Albrecht').replace('Le Pressoir','Pressoir').replace('Chez Laffy','Laffy').replace('Notre Airbnb','Airbnb');
+    var label=cp.name.replace("L'Église",'Église').replace('La Mairie','Mairie').replace('Lucien Albrecht / Wolfberger','Albrecht').replace('Le Pressoir','Pressoir').replace('Chez Laffy','Laffy').replace('Notre Airbnb','Airbnb');
     btn.textContent=label;
     btn.addEventListener('click',(function(key){return function(){S.mjC=key;renderMJTabs();renderMJContent();};})(ck));
     ct.appendChild(btn);
