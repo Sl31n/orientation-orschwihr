@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════
 const MJ_CODE = "ZEUS";  // À CHANGER avant le jour J
 const LS_KEY  = "evg_orschwihr_v1";
-const APP_VERSION = '1.22.0';
+const APP_VERSION = '1.22.1';
 const EVENT_DATE     = '23 mai 2026';
 const EVENT_LOCATION = 'Orschwihr';
 
@@ -35,7 +35,7 @@ const TEAMS = {
     key:"hindou", name:"Équipe Hindoue", mascot:"", tagline:"Les Disciples du Dharma",
     flavor:"Disciples du Dharma ! Le tigre sacré ouvre la voie. Chaque checkpoint est une étape de votre yatra — votre pèlerinage alsacien vers le moksha.",
     arrival:"Votre yatra s'achève. Le moksha vous attend — repos mérité après ce périple.",
-    members:["Léo","Clément","Antoine"],
+    members:["Léo","Clément","Armand"],
     color:"#c080e8", colorLight:"#7a3aa0", bg:"rgba(160,80,200,0.12)", border:"rgba(160,80,200,0.32)",
     route:["cave","fontaine","cafe","mairie","eglise"],
     emblem:'./emblem-hindou.webp',
